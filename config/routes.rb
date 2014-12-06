@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contact' => 'static_pages#contact'
+
+  resource :gallery_items
+
   root 'home#index'
 
   get 'home/index'

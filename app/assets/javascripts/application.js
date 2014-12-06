@@ -10,9 +10,27 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+
+//= require jquery.min.js
 //= require jquery_ujs
+//= require bootstrap.js
+//= require modernizr.min
+//= require general
+//= require hoverIntent
+//= require jquery.easing.min
+//= require cusel-min
+//= require jquery.jscrollpane.min
+//= require jquery.mousewheel
+//= require jquery.icheck.min
+//= require jquery-ui.custom.min
+//= require jquery.carouFredSel.min
+//= require jquery.touchSwipe.min
+//= require jquery.gmap.min
+//= require jquery.prettyPhoto
+//= require jquery.themepunch.revolution.min
+//= require sliderTabs
+//= require shCore
+//= require shBrushPlain
 //= require turbolinks
-//= require_tree .
-//= require bootstrap.min
 //= require custom
+//= require_tree .

@@ -12,8 +12,17 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap.min
- *= require font-awesome.min
+ *= require bootstrap.css
+ *= require font-awesome.css.erb
  *= require bootstrap-theme.min
- *= require style
+ *= require custom.css
+ *= require media-queries
+ *= require screen
+ *= require style.css.erb
+ *= require cusel
+ *= require prettyPhoto
+ *= require shCore
+ *= require shThemeDefault
+ *= require settings
+ *= require jquery-ui-1.10.3.custom
  */
