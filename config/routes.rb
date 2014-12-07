@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
-  resource :gallery_items
+  get 'gallery_items' => 'gallery_items#index'
+  get 'gallery_items/:id' => 'gallery_items#show'
+
+  get 'posts' => 'posts#index'
+  get 'posts/:id' => 'posts#show'
 
   root 'home#index'
 

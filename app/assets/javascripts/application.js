@@ -12,6 +12,7 @@
 //
 
 //= require jquery.min.js
+//= require_tree .
 //= require jquery_ujs
 //= require bootstrap.js
 //= require modernizr.min
@@ -33,4 +34,3 @@
 //= require shBrushPlain
 //= require turbolinks
 //= require custom
-//= require_tree .
