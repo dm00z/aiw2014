@@ -1,0 +1,16 @@
+<div class="post-item clearfix">
+  <div class="post-image"><%= image_tag post.image %></div>
+  <div class="post-title">
+    <h2><%= post.title %></h2>
+  </div>
+  <div class="post-meta-top">
+    <div class="post-meta-cats">Posted in <%= post.created_at.strftime("%b %d, %Y") %></div>>
+
+  </div>
+  <div class="post-descr entry">
+    <%= truncate_html(post.body, length: 600) %>
+  </div>
+  <div class="post-meta-bot">
+    <span class="post-author">Written by: <span><%= post.written_by %></span></span>
+  </div>
+</div>

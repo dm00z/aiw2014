@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124071500) do
+ActiveRecord::Schema.define(version: 20141220182929) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -51,13 +51,17 @@ ActiveRecord::Schema.define(version: 20141124071500) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "subtitle"
+    t.string   "image"
+    t.text     "description"
   end
 
   create_table "gallery_items", force: true do |t|
     t.string   "title"
-    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "short_desc"
+    t.string   "image"
   end
 
   create_table "posts", force: true do |t|
@@ -66,7 +70,13 @@ ActiveRecord::Schema.define(version: 20141124071500) do
     t.string   "written_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
+    t.string   "image"
+    t.string   "thumb"
+    t.string   "subtitle"
   end
+
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -81,6 +91,7 @@ ActiveRecord::Schema.define(version: 20141124071500) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "full_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

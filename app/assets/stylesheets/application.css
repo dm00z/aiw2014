@@ -10,19 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
- *= require bootstrap.css
+ *= require bootstrap
+ *= require style
+ *= require screen.css.erb
  *= require font-awesome.css.erb
  *= require bootstrap-theme.min
- *= require custom.css
- *= require media-queries
- *= require screen
- *= require style.css.erb
  *= require cusel
  *= require prettyPhoto
  *= require shCore
  *= require shThemeDefault
  *= require settings
  *= require jquery-ui-1.10.3.custom
+ *= require custom.css
  */

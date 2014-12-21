@@ -14,12 +14,6 @@
 //= require jquery.min.js
 //= require_tree .
 //= require jquery_ujs
-//= require bootstrap.js
-//= require modernizr.min
-//= require general
-//= require hoverIntent
-//= require jquery.easing.min
-//= require cusel-min
 //= require jquery.jscrollpane.min
 //= require jquery.mousewheel
 //= require jquery.icheck.min
@@ -29,6 +23,12 @@
 //= require jquery.gmap.min
 //= require jquery.prettyPhoto
 //= require jquery.themepunch.revolution.min
+//= require bootstrap.js
+//= require modernizr.min
+//= require general
+//= require hoverIntent
+//= require jquery.easing.min
+//= require cusel-min
 //= require sliderTabs
 //= require shCore
 //= require shBrushPlain

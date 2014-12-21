@@ -1,0 +1,89 @@
+<% provide(:title, @post.title) %>
+<div class="body_wrap">
+
+<div class="middle middle_white cols2 blog">
+  <div class="container">
+
+    <div class="content">
+
+      <!-- Post List -->
+<article class="postlist post-detail">
+
+  <div class="post-item clearfix">
+    <div class="post-image"><%= image_tag @post.image %></div>
+    <div class="post-title">
+      <h2><%= @post.title %></h2>
+    </div>
+    <div class="post-meta-top">
+      <div class="post-meta-cats">Posted in <%= @post.created_at.strftime("%b %d, %Y") %></div>>
+
+    </div>
+    <div class="post-descr entry">
+      <%= @post.body.html_safe %>
+    </div>
+    <div class="post-meta-bot">
+      <span class="post-author">Written by: <span><%= @post.written_by %></span></span>
+    </div>
+  </div>
+
+</article>
+
+    </div>
+    <!--/ content -->
+
+    <!-- sidebar -->
+    <div class="sidebar">
+
+      <!-- recent entries -->
+      <div class="widget-container widget_recent_entries">
+        <h3 class="widget-title">Latest Stories</h3>
+        <ul>
+          <li>
+            <a href="news_detail_cairang.html"><img src="images/temp/post_thumb_1.jpg" alt="" class="thumb"></a>
+            <div class="recent_entry"><a href="news_detail_cairang.html" class="link-name">Cai Rang River Market - not to buy, just to feel</a></div>
+            <div class="recent_entry_short">Sed molestie augue sit amet leo consequat posuere. Estibu lum ante</div>
+          </li>
+          <li>
+            <a href="news_detail_hanoi.html"><img src="images/temp/post_thumb_2.jpg" alt="" class="thumb"></a>
+            <div class="recent_entry"><a href="news_detail_hanoi.html" class="link-name">It's winter and It's Hanoi</a></div>
+            <div class="recent_entry_short">Estibu lum ante ipsum primis in faucibus orci luctus et ultrices posuere </div>
+          </li>
+          <li>
+            <a href="news_detail_phuot.html"><img src="images/temp/post_thumb_3.jpg" alt="" class="thumb"></a>
+            <div class="recent_entry"><a href="news_detail_phuot.html" class="link-name">"Phuot" to the highest mount of Indochina</a></div>
+            <div class="recent_entry_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. </div>
+          </li>
+          <li>
+            <a href="news_detail_caloc.html"><img src="images/temp/post_thumb_4.jpg" alt="" class="thumb"></a>
+            <div class="recent_entry"><a href="news_detail_caloc.html" class="link-name">"Ca loc nuong chui"</a></div>
+            <div class="recent_entry_short">Rediters auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla </div>
+          </li>
+          <li>
+            <a href="news_detail_sen.html"><img src="images/temp/post_thumb_5.jpg" alt="" class="thumb"></a>
+            <div class="recent_entry"><a href="news_detail_sen.html" class="link-name">Dong Thap Muoi and Lotus</a></div>
+            <div class="recent_entry_short">Rediters auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla </div>
+          </li>
+        </ul>
+
+        <div class="hover-search">
+          <a href="#" class="btn-search">SEARCH THIS PAGE <span class="icon-stack"><i class="icon-circle-blank icon-stack-base"></i><i class="icon-search"></i></span></a>
+          <form method="get" id="searchform5" action="#" class="clearfix">
+            <input class="inputField" name="s" id="s" value="" placeholder="Search this page" type="text">
+            <button type="submit" class="btn-form"><span class="icon icon-search"></span></button>
+          </form>
+        </div>
+
+      </div>
+      <!--/ recent entries -->
+
+
+
+
+    </div>
+    <!--/ sidebar -->
+
+  </div>
+</div>
+<!--/ middle -->
+
+</div>

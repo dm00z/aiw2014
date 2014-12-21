@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
-  get 'gallery_items' => 'gallery_items#index'
-  get 'gallery_items/:id' => 'gallery_items#show'
+  get 'categories/:id' => 'categories#show', as: 'category'
+
+  get 'gallery' => 'gallery_items#index'
+  get 'gallery_items/:id' => 'gallery_items#show', as: 'gallery_item'
 
   get 'posts' => 'posts#index'
-  get 'posts/:id' => 'posts#show'
+  get 'posts/:id' => 'posts#show', as: 'post'
 
   root 'home#index'
 

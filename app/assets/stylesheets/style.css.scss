@@ -93,7 +93,7 @@ blockquote, q {
 }
 blockquote:before, blockquote:after, q:before, q:after {
 	content: '';
-	content: none; 
+	content: none;
 }
 table {
 	border-collapse: collapse;
@@ -127,7 +127,7 @@ body {
 }
 /* preload images */
 body:before {
-	content: url(images/dropdown_bg.png)  url(images/dropdown_sub.png);
+    content: image_url("dropdown_bg.png")  image_url("dropdown_sub.png");
 	display:none
 }
 .body_wrap {
@@ -174,7 +174,7 @@ div.aligncenter {
 /* Clear Floats
 ===================================*/
 .clearfixi {
-    *zoom: 1
+    *zoom: 1;
 	padding: 0 0 20px 0;
 }
 
@@ -365,7 +365,7 @@ button[disabled], input[disabled] {
     padding: 0;
     width: 18px;
     height: 18px;
-    background: url(images/icheck_green.png) no-repeat;
+    background: image_url("icheck_green.png") no-repeat;
     border: none;
     cursor: pointer;
     float: left;
@@ -417,12 +417,12 @@ only screen and (-o-min-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
     .icheckbox_minimal-green,
     .iradio_minimal-green {
-        background-image: url(images/icheck_green%402x.png);
+        background-image: image_url("icheck_green%402x.png");
         -webkit-background-size: 200px 20px;
         background-size: 200px 20px;
     }
     .widget_contact .info_icon {
-        background-image: url(images/icons/contact_info_icons%402x.png);
+        background-image: image_url("icons/contact_info_icons%402x.png");
         -webkit-background-size: 40px 200px;
         background-size: 40px 200px;
     }
@@ -431,7 +431,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
 /* Preloader 
 ===================================*/
 .preloader { 
-	background:url(images/loading.gif) center center no-repeat; 
+	background:image_url("loading.gif") center center no-repeat;
 	display:inline-block
 }
 	
@@ -868,10 +868,10 @@ p.wp-caption-text, .frame_caption {
 .divider_thin {
 	margin-bottom:15px;
 	padding-top:15px;
-	background:url(<%= asset_path 'divider_line.png' %>) bottom repeat-x
+    background:image_url("divider_line.png") bottom repeat-x
 }
 .tf_divider{
-	background:url(images/divider_line.png) bottom repeat-x
+	background:image_url("divider_line.png") bottom repeat-x
 }
 
 /*===================================================*/
@@ -893,7 +893,7 @@ p.wp-caption-text, .frame_caption {
     /*background: #242424;*/
     /*border-top: 1px solid #d7d7d7;*/
     /*border-bottom: 1px solid #d7d7d7;*/
-    padding: 30px 0 15px 0
+    /*padding: 30px 0 15px 0;*/
     text-align: center;
     margin: 0px 0;
 }
@@ -1000,10 +1000,10 @@ p.wp-caption-text, .frame_caption {
 	left:0;
 	z-index: 1308;
 	padding:26px 0 0 0;
-    background: url(images/dropdown_sub.png) center 20px no-repeat;
+    background: image_url("dropdown_sub.png") bottom repeat-x center 20px no-repeat;
 }
 .dropdown li.parent {
-    background:url(images/dropdown_parent.png) center bottom no-repeat;
+    background:image_url("dropdown_parent.png") bottom repeat-x center bottom no-repeat;
 }
 .dropdown li.parentHover {
     background:none;
@@ -1019,7 +1019,7 @@ p.wp-caption-text, .frame_caption {
 	margin:0;
 	padding:0 15px;
 	height:auto;
-	background: url(images/dropdown_bg.png)
+	background: image_url("dropdown_bg.png")
 }
 .ie7 .dropdown li ul li,
 .ie7 .dropdown .parentHover ul li {
@@ -1079,7 +1079,7 @@ p.wp-caption-text, .frame_caption {
 	min-height: inherit
 }
 .dropdown li ul li ul {
-    background: url(images/dropdown_sub2.png) 2px 15px no-repeat;
+    background: image_url("dropdown_sub2.png") 2px 15px no-repeat;
 }
 
 /* mega nav */
@@ -1095,7 +1095,7 @@ p.wp-caption-text, .frame_caption {
 }
 .dropdown .mega-fullwidth ul {
     width: 100%;
-    background: url(images/dropdown_bg.png) 0 26px repeat-x;
+    background: image_url("dropdown_bg.png") 0 26px repeat-x;
     text-align: left;
 }
 .dropdown .mega-fullwidth:hover .dropdown_arrow {
@@ -1103,7 +1103,7 @@ p.wp-caption-text, .frame_caption {
     position: absolute;
     width: 12px;
     height: 6px;
-    background: url(images/dropdown_sub.png) 0 0 no-repeat;
+    background: image_url("dropdown_sub.png") 0 0 no-repeat;
     top: 20px;
     left: 0;
     z-index: 2;
@@ -1295,14 +1295,14 @@ p.wp-caption-text, .frame_caption {
     left: -38px;
     width: 130px;
     text-align: center;
-    background: url(images/dropdown_sub.png) center 20px no-repeat;
+    background: image_url("dropdown_sub.png") center 20px no-repeat;
     padding: 26px 0 0 0;
 }
 .topmenu_right .languages li {
     display: block;
     width: 100%;
     text-transform: none;
-    background: url(images/dropdown_bg.png);
+    background: image_url("dropdown_bg.png");
     margin: 0;
     line-height: 1em;
 }
@@ -1404,14 +1404,14 @@ p.wp-caption-text, .frame_caption {
     bottom: 0px;
     left: 0;
     width: 100%;
-    background: url(images/opacity_black_70.png);
+    background: image_url("opacity_black_70.png");
     height: 51px;
 }
 .top_slider_navi .inner {
     width: 990px;
     height: 51px;
     margin: 0 auto;
-    background: url(images/slider_tabs_line.png) 0 0 no-repeat;
+    background: image_url("slider_tabs_line.png") 0 0 no-repeat;
     padding-left: 44px;
 }
 .top_slider_navi a {
@@ -1426,7 +1426,7 @@ p.wp-caption-text, .frame_caption {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: bold;
-    background: url(images/slider_tabs_line.png) right 0 no-repeat;
+    background: image_url("slider_tabs_line.png") right 0 no-repeat;
     padding:0 44px 0 0;
     text-align: center;
     overflow: hidden;
@@ -1440,7 +1440,7 @@ p.wp-caption-text, .frame_caption {
 /*-----------------------------------*/
 .middle-tabs {
     clear: both;
-    background: url(images/black_row_bg.png);
+    background: image_url("black_row_bg.png");
     padding-top: 37px;
     height: 750px;
     position: relative;
@@ -1450,7 +1450,7 @@ p.wp-caption-text, .frame_caption {
     height: 560px;
 }
 .middle-tabs .tab-content {
-    /*background: url(images/middle_box_bg.png) center 0 no-repeat;*/
+    /*background: image_url("middle_box_bg.png") center 0 no-repeat;*/
     height: 550px;
     /*margin-top: 34px;*/
     margin-bottom: -120px;
@@ -1514,7 +1514,7 @@ p.wp-caption-text, .frame_caption {
     width: 670px;
 }
 .midtab_right {
-    background: url(images/middle_box_right.png) 0 0 repeat-y #376e82;
+    background: image_url("middle_box_right.png") 0 0 repeat-y #376e82;
     float: left;
     width: 300px;
     height: 550px;
@@ -1583,7 +1583,7 @@ p.wp-caption-text, .frame_caption {
 }
 
 .midtab_right_title {
-    background: url(images/middle_box_right_line.png) 0 bottom no-repeat;
+    background: image_url("middle_box_right_line.png") 0 bottom no-repeat;
     min-height: 70px;
     padding: 30px 25px 15px 25px;
 }
@@ -1608,7 +1608,7 @@ p.wp-caption-text, .frame_caption {
     margin-bottom: 10px;
 }
 .midtab_right_list li {
-    background: url(images/middle_box_right_line.png) 0 top no-repeat;
+    background: image_url("middle_box_right_line.png") 0 top no-repeat;
     padding: 30px 25px 15px 25px;
     font-size: 12px;
     color: #a2bcc6;
@@ -1640,7 +1640,7 @@ p.wp-caption-text, .frame_caption {
 }
 .reservation_form h3 {
     height: 70px;
-    background: url(images/middle_box_right_line.png) 0 bottom repeat-x;
+    background: image_url("middle_box_right_line.png") 0 bottom repeat-x;
     padding: 30px 25px 0 25px;
     margin-bottom: 20px;
     color: #fff;
@@ -1667,7 +1667,7 @@ form .row_field {
     margin-right: 0;
 }
 .row_divider {
-    background: url(images/middle_box_right_line.png) 0 0 no-repeat;
+    background: image_url("middle_box_right_line.png") 0 0 no-repeat;
     clear: both;
     height: 2px;
     margin: 15px 0 12px 0;
@@ -1739,7 +1739,7 @@ form .row_field {
 }
 .reservation_form .rowSubmit button,
 .midtab_big_btn{
-    background: url(images/middle_box_right_btn.png) 0 0 repeat-y #50dae6;
+    background: image_url("middle_box_right_btn.png") 0 0 repeat-y #50dae6;
     color: #fff;
     text-shadow: 0 1px 1px #36bedc;
     border: none;
@@ -1925,7 +1925,7 @@ form .row_field {
 }
 
 .local_time {
-    background: url(images/icons/icon_sun.png) 0 12px no-repeat;
+    background: image_url("icons/icon_sun.png") 0 12px no-repeat;
     padding-left: 45px;
     font-size: 12px;
     text-transform: uppercase;
@@ -1945,7 +1945,7 @@ form .row_field {
     display: inline-block;
     width: 15px;
     height: 15px;
-    background: url(images/icons/rating.png) 0 0 no-repeat;
+    background: image_url("icons/rating.png") 0 0 no-repeat;
 }
 .star_rating.rating1 .star1 {
     background-position: 0 -15px;
@@ -2105,7 +2105,7 @@ body .ui-datepicker .ui-datepicker-next {
 .footer {
     border-top: 9px solid #000;
     color: #8e9a9e;
-    background: url(images/footer_bg.png);
+    background: image_url("footer_bg.png");
 }
 .footer .container {
     padding: 50px 0;
@@ -2978,17 +2978,17 @@ blockquote {
 	display:inline-block;
 	width:16px;
 	height:16px;
-	background:url(images/slider_pagination.png) center 0 no-repeat;
+	background:image_url("slider_pagination.png") center 0 no-repeat;
 	overflow:hidden;
 	text-indent:-300px;
 	margin:0 3px
 }
 .entry .slider_pagination a:hover,
 .entry .slider_pagination a.selected {
-	background:url(images/slider_pagination.png) center -16px no-repeat
+	background:image_url("slider_pagination.png") center -16px no-repeat
 }
 .entry .slider_pagination a {
-	background:url(images/slider_pagination.png) 0 0 no-repeat
+	background:image_url("slider_pagination.png") 0 0 no-repeat
 }
 .ie7 .slider_pagination a {
 	display:block;
@@ -3511,7 +3511,7 @@ blockquote {
     display: block;
     padding: 11px 40px 11px 25px;
     text-transform: uppercase;
-    background: url(images/widget_radio.png) 270px 11px no-repeat;
+    background: image_url("widget_radio.png") 270px 11px no-repeat;
 }
 .sidebar .widget_nav_menu ul li ul li,
 .sidebar .widget_categories ul li ul li{
@@ -3802,7 +3802,7 @@ blockquote {
     top: 0;
     width: 30px;
     height: 32px;
-    background: url(images/arrows_lr.png) 5px -2px no-repeat #51dae6;
+    background: image_url("arrows_lr.png") 5px -2px no-repeat #51dae6;
     text-indent: -1000px;
     overflow: hidden;
 }
@@ -3869,7 +3869,7 @@ blockquote {
     width: 40px;
     height: 40px;
     margin-right: 15px;
-    background: url(images/icons/contact_info_icons.png) 0 0 no-repeat;
+    background: image_url("icons/contact_info_icons.png") 0 0 no-repeat;
 }
 .widget_contact .info_phone {background-position: 0 0}
 .widget_contact .info_fax {background-position: 0 -40px}
@@ -4148,7 +4148,7 @@ blockquote {
     font-size: 16px;
     padding: 20px;
     text-transform: uppercase;
-    background: url("images/middle_box_right_line.png") no-repeat scroll 0 bottom;
+    background: image_url("middle_box_right_line.png") no-repeat scroll 0 bottom;
 }
 .widget-container.newsletterBox form,
 .widget-container.widget_search form,
@@ -4350,7 +4350,7 @@ blockquote {
     margin: 0 20px 70px 0;
 }
 .promo-list .block-item{
-    height: 530px;
+
     background-color: #fff;
     -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
@@ -4359,7 +4359,7 @@ blockquote {
     height: 450px;
 }
 .specials .block-item {
-    height: 490px;
+    height: 200px;
 }
 .block-image {
     position: relative;
@@ -4502,7 +4502,7 @@ body div.pp_default .pp_description {
     display: inline-block;
     width: 9px;
     height: 9px;
-    background: url(images/slider_pagination_small.png) 0 0;
+    background: image_url("slider_pagination_small.png") 0 0;
     text-indent: -400px;
     overflow: hidden;
     margin: 0 2px;
@@ -4794,7 +4794,7 @@ body div.pp_default .pp_description {
     position: relative;
 }
 .offer-image .ribbon {
-    background: url(images/ribbon.png) right top no-repeat;
+    background: image_url("ribbon.png") right top no-repeat;
     width: 65px;
     height: 65px;
     position: absolute;

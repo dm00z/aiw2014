@@ -1,2 +1,37 @@
-<h1>GalleryItems#index</h1>
-<p>Find me in app/views/gallery_items/index.html.erb</p>
+<div class="body_wrap">
+
+<div class="middle middle_white">
+  <div class="container">
+
+    <!-- INTRODUCTION -->
+    <article class="post-detail">
+      <h1>THANK YOU</h1>
+      <br>
+      <div class="entry clearfix">
+        <%= image_tag 'photographer.jpg', :class => 'alignright' %>
+        <p>We would like to offer our sincere thanks to the photographers, who took and recommended photos to our gallery.</p>
+        <p>Without them, our gallery would not be completed and shine brightly like today. Once again,</p>
+
+        <p>Thank you.</p>
+      </div>
+    </article>
+    <br>
+    <br>
+
+    <!-- gallery blocks -->
+    <div class="block-list promo-list features clearfix">
+
+      <%= render @gallery_items %>
+      <br>
+    <!--/ gallery blocks -->
+
+  </div>
+    <%= paginate @gallery_items %>
+</div>
+
+<!--/ middle -->
+
+</div>
+
+
+</div>

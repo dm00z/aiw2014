@@ -37,6 +37,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'carrierwave'
 
+gem 'truncate_html'
+
+gem 'yahoo_weather'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

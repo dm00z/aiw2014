@@ -170,16 +170,14 @@
     <article class="post-detail">
       <h1>NEW DESTINATIONS - NEW STORIES</h1>
       <div class="post-title">
-        <h2><a href="news_detail_vungtau.html">Vung Tau Opens New Resort</a></h2>
+        <h2><%= link_to @posts.last.title, post_path(@posts.last.id) %></h2>
       </div>
       <br/>
       <div class="entry clearfix">
-        <img src="images/temp/vungtau_resort_1.jpg" alt="" class="alignright"/>
-        <p>Proin gravida nibh vel velit auctor aluet. Aene fert restanco sollicitudin, int lorem quiste bibendum redt auctor, nisi elit conseq ipsum necters sagittis sem nibh id eliberadio Guerrila.</p>
-
-        <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.</p>
+        <%= image_tag @posts.last.image, :class => 'alignright' %>
+        <%= @posts.last.body.html_safe %>
       </div>
-      <a href="news_detail_vungtau.html">READ THE DETAIL</a>
+      <%= link_to 'READ THE DETAIL', post_path(@posts.last.id) %>
     </article>
     <br/>
 
@@ -188,23 +186,15 @@
       <div class="inner">
         <ul class="nav nav-tabs clearfix active_bookmark1">
           <li class="active"><a href="#tab_cont_1_1" data-toggle="tab">Recent Stories</a></li>
-          <li><a href="#tab_cont_1_2" data-toggle="tab">Most Commented</a></li>
         </ul>
         <div class="tab-content clearfix">
           <div id="tab_cont_1_1" class="tab-pane fade in active">
             <ul class="post_list recent_posts">
-              <li class="clearfix"><a href="blog-details.html"><img src="images/temp/post_thumb_1.jpg" alt="" class="thumb"></a> <a href="news_detail_cairang.html">Cai Rang River Market - not to buy, just to feel.</a> <div class="date">Nov 11, 2014</div> </li>
-              <li class="clearfix"><a href="blog-details.html"><img src="images/temp/post_thumb_2.jpg" alt="" class="thumb"></a> <a href="news_detail_hanoi.html">It's winter and It's Hanoi. </a> <div class="date">Nov 1, 2014</div> </li>
-              <li class="clearfix"><a href="blog-details.html"><img src="images/temp/post_thumb_3.jpg" alt="" class="thumb"></a> <a href="news_detail_phuot.html">"Phuot" to the highest mount of Indochina. </a> <div class="date">Oct 12, 2014</div> </li>
+              <% @last_three.each do |post| %>
+                <%= li ((image_tag post.thumb, :class => 'thumb') + (link_to post.title, post_path(post.id)) + (div post.created_at.strftime("%b %d, %Y"), :class => 'date')),  :class => 'clearfix' %>
+              <% end %>
             </ul>
-          </div>
 
-          <div id="tab_cont_1_2" class="tab-pane fade">
-            <ul class="post_list popular_posts">
-              <li class="clearfix"><a href="blog-details.html"><img src="images/temp/post_thumb_1.jpg" alt="" class="thumb"></a> <a href="news_detail_cairang.html">Cai Rang River Market - not to buy, just to feel.</a> <div class="date">Nov 11, 2014</div> </li>
-              <li class="clearfix"><a href="blog-details.html"><img src="images/temp/post_thumb_2.jpg" alt="" class="thumb"></a> <a href="news_detail_hanoi.html">It's winter and It's Hanoi. </a> <div class="date">Nov 1, 2014</div> </li>
-              <li class="clearfix"><a href="blog-details.html"><img src="images/temp/post_thumb_3.jpg" alt="" class="thumb"></a> <a href="news_detail_phuot.html">"Phuot" to the highest mount of Indochina. </a> <div class="date">Oct 12, 2014</div> </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -218,129 +208,32 @@
 
 <div class="middle middle_gray">
   <div class="container">
-    <h1>DESTINATIONS THIS MONTH</h1>
+    <h1>RECENT DESTINATIONS</h1>
     <br/>
 
     <!-- promo blocks -->
     <div class="block-list promo-list clearfix">
-
-
-
+      <% recent_cat.each do |cat| %>
       <div class="block-item">
         <div class="block-image">
-          <a href="north.html"><img src="images/temp/block_image_1.jpg" alt=""/></a>
-          <div class="block-caption"><h2>NORTHERN VIETNAM</h2></div>
+          <%= link_to (image_tag cat.image, :width => '300px', :height => '280px'), category_path(cat.id) %>
+          <div class="block-caption"><h2><%= cat.name%></h2></div>
         </div>
         <div class="block-aside">
-          <h3> Experience winter time coming in.</h3>
-          <div class="list-minimal clearfix">
-            <ul>
-              <li> <a href="sapa.html">Sa Pa</a></li>
-              <li> <a href="sapa.html">Dien Bien - Lai Chau</a></li>
-              <li> <a href="sapa.html">Ha Long Bay</a></li>
-              <li> <a href="sapa.html">Trang An</a></li>
-              <li> <a href="sapa.html">Ha Noi Capital</a></li>
-            </ul>
+          <h3> <%= cat.subtitle %></h3>
+          <div class="clearfix">
+            <%= truncate_html(cat.description, length: 200) %>
           </div>
         </div>
         <div class="block-meta">
-          <a href="north.html">FIND OUT MORE</a>
+          <%= link_to 'FIND OUT MORE', category_path(cat.id) %>
         </div>
       </div>
-
-      <div class="block-item">
-        <div class="block-image">
-          <a href="center.html"><img src="images/temp/block_image_2.jpg" alt=""/></a>
-          <div class="block-caption"><h2>CENTRAL VIETNAM</h2></div>
-        </div>
-        <div class="block-aside">
-          <h3>Festival time along the country.</h3>
-          <div class="list-minimal clearfix">
-            <ul>
-              <li> <a href="sapa.html">Da Nang City</a></li>
-              <li> <a href="sapa.html">Hoi An</a></li>
-              <li> <a href="sapa.html">Nha Trang</a></li>
-              <li> <a href="sapa.html">Phong Nha</a></li>
-              <li> <a href="sapa.html">Da Lat</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block-meta">
-          <a href="center.html">FIND OUT MORE</a>
-        </div>
-      </div>
-
-      <div class="block-item">
-        <div class="block-image">
-          <a href="south.html"><img src="images/temp/block_image_3.jpg" alt=""/></a>
-          <div class="block-caption"><h2>SOUTHERN VIETNAM</h2></div>
-        </div>
-        <div class="block-aside">
-          <h3>Can't stop exploring the beauty.</h3>
-          <div class="list-minimal clearfix">
-            <ul>
-              <li> <a href="sapa.html">Ho Chi Minh City</a></li>
-              <li> <a href="sapa.html">Dong Thap Muoi</a></li>
-              <li> <a href="sapa.html">Cai Rang River Market</a></li>
-              <li> <a href="sapa.html">Vung Tau</a></li>
-              <li> <a href="sapa.html">Phu Quoc Island</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="block-meta">
-          <a href="center.html">FIND OUT MORE</a>
-        </div>
-      </div>
-
+      <% end %>
     </div>
     <!--/ promo blocks -->
 
-    <!-- weather block -->
-    <div class="weather_block clearfix">
 
-      <div class="wcol wcol-title">
-        <div class="wcol-head"></div>
-        <div class="wcol-mid"><strong>7 DAYS FORECAST</strong> <span>LOCATION</span></div>
-        <div class="wcol-bot"><span class="weather-location">Hanoi, Vietnam</span></div>
-      </div>
-      <div class="wcol wcol-1">
-        <div class="wcol-head">TODAY</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_3.png" alt=""/></div>
-        <div class="wcol-bot">25&deg;C</div>
-      </div>
-      <div class="wcol wcol-2">
-        <div class="wcol-head">WED</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_1.png" alt=""/></div>
-        <div class="wcol-bot">26&deg;C</div>
-      </div>
-      <div class="wcol wcol-3">
-        <div class="wcol-head">THU</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_3.png" alt=""/></div>
-        <div class="wcol-bot">25&deg;C</div>
-      </div>
-      <div class="wcol wcol-4">
-        <div class="wcol-head">FRI</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_1.png" alt=""/></div>
-        <div class="wcol-bot">28&deg;C</div>
-      </div>
-      <div class="wcol wcol-5">
-        <div class="wcol-head">SAT</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_1.png" alt=""/></div>
-        <div class="wcol-bot">27&deg;C</div>
-      </div>
-      <div class="wcol wcol-6">
-        <div class="wcol-head">SUN</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_2.png" alt=""/></div>
-        <div class="wcol-bot">21&deg;C</div>
-      </div>
-      <div class="wcol wcol-7">
-        <div class="wcol-head">MON</div>
-        <div class="wcol-mid"><img src="images/icons/weather_icon_2.png" alt=""/></div>
-        <div class="wcol-bot">20&deg;C</div>
-      </div>
-
-    </div>
-    <!--/ weather block -->
 
   </div>
 </div>
@@ -348,12 +241,6 @@
 <!-- footer -->
 
 <!--/ footer -->
-
-<div class="copyright">
-  <div class="container">
-
-  </div>
-</div>
 
 </div>
 

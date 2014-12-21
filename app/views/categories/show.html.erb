@@ -1,0 +1,45 @@
+<% provide(:title, @category.name) %>
+
+<div class="body_wrap">
+
+  <div class="middle middle_white">
+    <div class="container">
+
+      <!-- INTRODUCTION -->
+      <article class="post-detail">
+        <h1 style="text-align:center">Beauty of <%= @category.name %></h1>
+        <br>
+        <div class="entry clearfix">
+          <%= image_tag @category.image, :class => 'alignright', :width => '540px', :height => '250px' %>
+
+          <%= @category.description.html_safe %>
+        </div>
+      </article>
+      <br>
+      <br>
+
+      <!-- specials blocks -->
+      <div class="block-list specials clearfix">
+
+        <% recent_post_of_category(3).each do |post| %>
+          <div class="block-item">
+            <h2><%= link_to post.title, post_path(post.id) %></h2>
+            <div class="subtitle"><%= post.subtitle %></div>
+            <div class="block-image"><%= link_to (image_tag post.image, :width => '300px', :height => '162px'), post_path(post.id) %></div>
+            <div class="block-aside">
+              <p><%= truncate_html(post.body).to_s.html_safe %></p>
+            </div>
+            <div class="block-meta">
+              <%= link_to 'VIEW DETAIL', post_path(post.id) %>
+            </div>
+          </div>
+        <% end %>
+
+    </div>
+    <!--/ specials blocks -->
+
+  </div>
+</div>
+<!--/ middle -->
+
+</div>
