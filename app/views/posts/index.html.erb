@@ -33,11 +33,11 @@
           </ul>
 
           <div class="hover-search">
-            <a href="#" class="btn-search">SEARCH THIS PAGE <span class="icon-stack"><i class="icon-circle-blank icon-stack-base"></i><i class="icon-search"></i></span></a>
-            <form method="get" id="searchform5" action="#" class="clearfix">
-              <input class="inputField" name="s" id="s" value="" placeholder="Search this page" type="text">
-              <button type="submit" class="btn-form"><span class="icon icon-search"></span></button>
-            </form>
+            <a href="#" class="btn-search">SEARCH<span class="icon-stack"><i class="icon-circle-blank icon-stack-base"></i><i class="icon-search"></i></span></a>
+            <%= form_tag posts_path, :method => 'get', :id => 'searchform5', :class => 'clearfix' do %>
+              <%= text_field_tag :search, params[:search], :class => 'inputField', :placeholder => 'Search Posts', :type => 'text' %>
+              <%= button_tag content_tag(:span, '', class: 'icon icon-search'), :name => nil, :class => 'btn-form' %>
+            <% end %>
           </div>
 
         </div>

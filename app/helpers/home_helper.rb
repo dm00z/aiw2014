@@ -1,5 +1,5 @@
 module HomeHelper
   def recent_cat
-    Category.last(3)
+    Category.limit(3).order('id desc')
   end
 end

@@ -16,4 +16,21 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def weather_forecast(woied)
+    client = YahooWeather::Client.new
+
+    begin
+      response = client.fetch(woied)
+    rescue SocketError => e
+      e.message
+      render 'weather/error'
+    end
+
+    response.try(:forecasts) || []
+  end
+
+  def to_c(num)
+    (num-32)*5/9
+  end
 end

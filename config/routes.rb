@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'weather/show'
+
   get 'contact' => 'static_pages#contact'
 
   get 'categories/:id' => 'categories#show', as: 'category'

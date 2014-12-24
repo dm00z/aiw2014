@@ -4589,9 +4589,14 @@ body div.pp_default .pp_description {
     padding: 15px 0;
 }
 .post-meta-top .post-meta-cats,
-.post-meta-bot .post-author{
-    float: left;
+
+.post-meta-bot .post-author span{
+   float: left;
 }
+.post-meta-top .post-meta-cats span{
+  color: #4facbc;
+}
+
 .post-meta-top .post-meta-cats a,
 .post-meta-bot .post-author a,
 .post-meta-bot .post-author span{

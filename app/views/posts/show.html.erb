@@ -37,40 +37,23 @@
       <!-- recent entries -->
       <div class="widget-container widget_recent_entries">
         <h3 class="widget-title">Latest Stories</h3>
+
         <ul>
-          <li>
-            <a href="news_detail_cairang.html"><img src="images/temp/post_thumb_1.jpg" alt="" class="thumb"></a>
-            <div class="recent_entry"><a href="news_detail_cairang.html" class="link-name">Cai Rang River Market - not to buy, just to feel</a></div>
-            <div class="recent_entry_short">Sed molestie augue sit amet leo consequat posuere. Estibu lum ante</div>
-          </li>
-          <li>
-            <a href="news_detail_hanoi.html"><img src="images/temp/post_thumb_2.jpg" alt="" class="thumb"></a>
-            <div class="recent_entry"><a href="news_detail_hanoi.html" class="link-name">It's winter and It's Hanoi</a></div>
-            <div class="recent_entry_short">Estibu lum ante ipsum primis in faucibus orci luctus et ultrices posuere </div>
-          </li>
-          <li>
-            <a href="news_detail_phuot.html"><img src="images/temp/post_thumb_3.jpg" alt="" class="thumb"></a>
-            <div class="recent_entry"><a href="news_detail_phuot.html" class="link-name">"Phuot" to the highest mount of Indochina</a></div>
-            <div class="recent_entry_short">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. </div>
-          </li>
-          <li>
-            <a href="news_detail_caloc.html"><img src="images/temp/post_thumb_4.jpg" alt="" class="thumb"></a>
-            <div class="recent_entry"><a href="news_detail_caloc.html" class="link-name">"Ca loc nuong chui"</a></div>
-            <div class="recent_entry_short">Rediters auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla </div>
-          </li>
-          <li>
-            <a href="news_detail_sen.html"><img src="images/temp/post_thumb_5.jpg" alt="" class="thumb"></a>
-            <div class="recent_entry"><a href="news_detail_sen.html" class="link-name">Dong Thap Muoi and Lotus</a></div>
-            <div class="recent_entry_short">Rediters auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla </div>
-          </li>
+          <% recent_post(5).each do |post| %>
+              <li>
+                <%= link_to (image_tag post.thumb, :class => 'thumb'), post_path(post.id) %>
+                <div class="recent_entry"><%= link_to post.title, post_path(post.id), :class => 'link-name'  %></div>
+                <div class="recent_entry_short"><%= truncate_html(post.body, length: 30) %></div>
+              </li>
+          <% end %>
         </ul>
 
         <div class="hover-search">
-          <a href="#" class="btn-search">SEARCH THIS PAGE <span class="icon-stack"><i class="icon-circle-blank icon-stack-base"></i><i class="icon-search"></i></span></a>
-          <form method="get" id="searchform5" action="#" class="clearfix">
-            <input class="inputField" name="s" id="s" value="" placeholder="Search this page" type="text">
-            <button type="submit" class="btn-form"><span class="icon icon-search"></span></button>
-          </form>
+          <a href="#" class="btn-search">SEARCH<span class="icon-stack"><i class="icon-circle-blank icon-stack-base"></i><i class="icon-search"></i></span></a>
+          <%= form_tag posts_path, :method => 'get', :id => 'searchform5', :class => 'clearfix' do %>
+              <%= text_field_tag :search, params[:search], :class => 'inputField', :placeholder => 'Search Posts', :type => 'text' %>
+              <%= button_tag content_tag(:span, '', class: 'icon icon-search'), :name => nil, :class => 'btn-form' %>
+          <% end %>
         </div>
 
       </div>

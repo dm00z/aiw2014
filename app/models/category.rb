@@ -3,6 +3,6 @@ class Category < ActiveRecord::Base
   mount_uploader :image, PhotoUploader
 
   validates_associated :posts
-  validate :name, :description, presence: true
-  validate :name, length: { maximum: 300 }
+  validates :name, :description, presence: true
+  validates :name, length: { maximum: 300 }
 end

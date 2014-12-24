@@ -233,8 +233,28 @@
     </div>
     <!--/ promo blocks -->
 
+    <!-- weather block -->
+    <div class="weather_block clearfix">
+
+      <div class="wcol wcol-title">
+        <div class="wcol-head"></div>
+        <div class="wcol-mid"><strong>5 DAYS FORECAST</strong> <span>LOCATION</span></div>
+        <div class="wcol-bot"><span class="weather-location">Hanoi, Vietnam</span></div>
+      </div>
 
 
+
+          <% @hn_weather.each do |forecast| %>
+          <div class="wcol">
+            <div class="wcol-head"><%= forecast.day %></div>
+            <div class="wcol-mid"><%= forecast.text %></div>
+            <div class="wcol-bot"><%= to_c forecast.high %>&deg;C</div>
+          </div>
+          <% end %>
+
+
+    </div>
+    <!--/ weather block -->
   </div>
 </div>
 
