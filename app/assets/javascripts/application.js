@@ -32,5 +32,4 @@
 //= require sliderTabs
 //= require shCore
 //= require shBrushPlain
-//= require turbolinks
 //= require custom
