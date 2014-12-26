@@ -15,7 +15,7 @@
       <h2><%= @post.title %></h2>
     </div>
     <div class="post-meta-top">
-      <div class="post-meta-cats">Posted in <span class = "post-author"><%=link_to get_category_from_id(post.category_id), category_path(post.category_id) %></span>, <%= post.created_at.strftime("%b %d, %Y") %> by: <span><%= post.written_by %></div>>
+      <div class="post-meta-cats">Posted in <span class = "post-author"><%=link_to get_category_from_id(@post.category_id), category_path(@post.category_id) %></span>, <%= @post.created_at.strftime("%b %d, %Y") %> by: <span><%= @post.written_by %></div>>
 
     </div>
     <div class="post-descr entry">
