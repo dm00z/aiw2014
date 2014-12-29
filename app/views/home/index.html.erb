@@ -175,7 +175,7 @@
       <br/>
       <div class="entry clearfix">
         <%= image_tag @posts.last.image, :class => 'alignright' %>
-        <%= @posts.last.body.html_safe %>
+        <%= truncate_html(@posts.last.body, length: 600).to_s.html_safe %>
       </div>
       <%= link_to 'READ THE DETAIL', post_path(@posts.last.id) %>
     </article>
@@ -208,7 +208,7 @@
 
 <div class="middle middle_gray">
   <div class="container">
-    <h1>RECENT DESTINATIONS</h1>
+    <h1>RECENT WONDERS</h1>
     <br/>
 
     <!-- promo blocks -->

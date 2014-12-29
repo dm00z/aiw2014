@@ -24,8 +24,8 @@ en:
     pagination:
       first: "&laquo; First"
       last: "Last &raquo;"
-      previous: "OLDER"
-      next: "NEWER"
+      previous: "NEWER"
+      next: "OLDER"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
